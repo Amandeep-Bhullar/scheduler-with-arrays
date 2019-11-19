@@ -83,16 +83,7 @@ function getCourseAsHtmlString(singleCourse){
       </article>`;
       return htmlString;
 }
-// The map() function loops through EACH value in an array, 
-// works with it, returns a new Array (1 for 1)
-const arrCourseAsHtml=allCourses.map(getCourseAsHtmlString);// map() returns Array
 
-// The join() function takes each value in an Array combining
-// it together to create a String, separating by a newline (\n)
-const stringCourseAsHtml=arrCourseAsHtml.join('\n');// join() returns String
-
-// Take our new string, put into the document
- document.getElementById('courses').innerHTML= stringCourseAsHtml;
 /* 
 LAB:
 1. Fix the output of the start term by turning the Object's properties into a String
@@ -133,6 +124,16 @@ console.log(getDurationFromMinutes(160));
 // Execute functions that will access data
 //document.getElementById(`courses`).innerHTML=getCourseAsHtmlString(allCourses[0]);
 
+// The map() function loops through EACH value in an array, 
+// works with it, returns a new Array (1 for 1)
+const arrCourseAsHtml=allCourses.map(getCourseAsHtmlString);// map() returns Array
 
+// The join() function takes each value in an Array combining
+// it together to create a String, separating by a newline (\n)
+const stringCourseAsHtml=arrCourseAsHtml.join('\n');// join() returns String
+
+// Take our new string, put into the document
+ document.getElementById('courses').innerHTML= stringCourseAsHtml;
+ 
  // The map() function,The join() function use together in one line to the new string into the document
  //document.getElementById('courses').innerHTML= allCourses.map(getCourseAsHtmlString).join('\n');
