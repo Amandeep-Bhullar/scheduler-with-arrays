@@ -111,10 +111,11 @@ function getCourseAsHtmlString(singleCourse){
 // 2. Wrap the below functionality in a function
 // that takes the Array to print as a parameter
 // Test by passing "allCourses".
+function showThreeCoursesFunction(){
 
-// 3. Wrap the entire execution in an Event handler
-// so that the code only runs when the window
-// has finished loading
+  document.getElementById('courses').innerHTML= allCourses.slice(0,3).map(getCourseAsHtmlString).join('\n');
+
+}
 
 /* 
 LAB:
@@ -168,6 +169,21 @@ console.log(getDurationFromMinutes(160));
  //document.getElementById('courses').innerHTML= stringCourseAsHtml;
  
  // The map() function,The join() function use together in one line to the new string into the document
- document.getElementById('courses').innerHTML= allCourses.map(getCourseAsHtmlString).join('\n');
- courseButton=document.getElementById('button').innerHTML;
-courseButton.addEventListener("click",showThreeCorses);
+ 
+ 
+ 
+ 
+ // LAB:
+// 1. Add a button the document that when clicked, 
+// will load ONLY the first three courses
+// Test by having at least 4 courses
+courseAvailableButton= document.getElementById("button");
+
+// 3. Wrap the entire execution in an Event handler
+// so that the code only runs when the window
+// has finished loading
+
+courseAvailableButton.addEventListener("click",showThreeCoursesFunction);
+
+
+ 
