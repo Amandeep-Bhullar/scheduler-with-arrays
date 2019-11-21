@@ -29,10 +29,29 @@ const allCourses=[
       weeks: 15,
       breaks: true,
       dura: 160,
-    },{
+    },
+    {
       name: `Prototyping`,//1.Create a 2nd course Object
       code: `WDDM-117`,
       instructor: `Cory Coletta`,
+      start: { term: `Fall`, year: 2019 },
+      weeks: 15,
+      breaks: true,
+      dura: 160, 
+    },
+    {
+      name: `Applied Design`,
+      code: `WDDM-114`,
+      instructor: `Rocco`,
+      start: { term: `Fall`, year: 2019 },
+      weeks: 15,
+      breaks: true,
+      dura: 160,
+    },
+    {
+      name: `Production Techniques`,//1.Create a 2nd course Object
+      code: `WDDM-116`,
+      instructor: `Milord`,
       start: { term: `Fall`, year: 2019 },
       weeks: 15,
       breaks: true,
@@ -83,6 +102,19 @@ function getCourseAsHtmlString(singleCourse){
       </article>`;
       return htmlString;
 }
+// LAB:
+// 1. Add a button the document that when clicked, 
+// will load ONLY the first three courses
+// Test by having at least 4 courses
+
+
+// 2. Wrap the below functionality in a function
+// that takes the Array to print as a parameter
+// Test by passing "allCourses".
+
+// 3. Wrap the entire execution in an Event handler
+// so that the code only runs when the window
+// has finished loading
 
 /* 
 LAB:
@@ -126,14 +158,16 @@ console.log(getDurationFromMinutes(160));
 
 // The map() function loops through EACH value in an array, 
 // works with it, returns a new Array (1 for 1)
-const arrCourseAsHtml=allCourses.map(getCourseAsHtmlString);// map() returns Array
+//const arrCourseAsHtml=allCourses.map(getCourseAsHtmlString);// map() returns Array
 
 // The join() function takes each value in an Array combining
 // it together to create a String, separating by a newline (\n)
-const stringCourseAsHtml=arrCourseAsHtml.join('\n');// join() returns String
+//const stringCourseAsHtml=arrCourseAsHtml.join('\n');// join() returns String
 
 // Take our new string, put into the document
- document.getElementById('courses').innerHTML= stringCourseAsHtml;
+ //document.getElementById('courses').innerHTML= stringCourseAsHtml;
  
  // The map() function,The join() function use together in one line to the new string into the document
- //document.getElementById('courses').innerHTML= allCourses.map(getCourseAsHtmlString).join('\n');
+ document.getElementById('courses').innerHTML= allCourses.map(getCourseAsHtmlString).join('\n');
+ courseButton=document.getElementById('button').innerHTML;
+courseButton.addEventListener("click",showThreeCorses);
